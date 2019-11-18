@@ -43,13 +43,13 @@ import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
-public class FirebasePlugin extends CordovaPlugin {
+public class FirebasePerformancePlugin extends CordovaPlugin {
 
-    protected static FirebasePlugin instance = null;
+    protected static FirebasePerformancePlugin instance = null;
     private static CordovaInterface cordovaInterface = null;
     private static Context applicationContext = null;
     private static Activity cordovaActivity = null;
-    protected static final String TAG = "FirebasePlugin";
+    protected static final String TAG = "FirebasePerformancePlugin";
 
     private static boolean inBackground = true;
 
@@ -59,7 +59,7 @@ public class FirebasePlugin extends CordovaPlugin {
         cordovaActivity = this.cordova.getActivity();
         applicationContext = cordovaActivity.getApplicationContext();
         final Bundle extras = cordovaActivity.getIntent().getExtras();
-        FirebasePlugin.cordovaInterface = this.cordova;
+        FirebasePerformancePlugin.cordovaInterface = this.cordova;
         this.cordova.getThreadPool().execute(new Runnable() {
             public void run() {
                 try {
@@ -100,12 +100,12 @@ public class FirebasePlugin extends CordovaPlugin {
 
     @Override
     public void onPause(boolean multitasking) {
-        FirebasePlugin.inBackground = true;
+        FirebasePerformancePlugin.inBackground = true;
     }
 
     @Override
     public void onResume(boolean multitasking) {
-        FirebasePlugin.inBackground = false;
+        FirebasePerformancePlugin.inBackground = false;
     }
 
     @Override
@@ -168,7 +168,7 @@ public class FirebasePlugin extends CordovaPlugin {
     private HashMap<String, Trace> traces = new HashMap<String, Trace>();
 
     private void startTrace(final CallbackContext callbackContext, final String name) {
-        final FirebasePlugin self = this;
+        final FirebasePerformancePlugin self = this;
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
                 try {
@@ -194,7 +194,7 @@ public class FirebasePlugin extends CordovaPlugin {
     }
 
     private void incrementCounter(final CallbackContext callbackContext, final String name, final String counterNamed) {
-        final FirebasePlugin self = this;
+        final FirebasePerformancePlugin self = this;
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
                 try {
@@ -219,7 +219,7 @@ public class FirebasePlugin extends CordovaPlugin {
     }
 
     private void stopTrace(final CallbackContext callbackContext, final String name) {
-        final FirebasePlugin self = this;
+        final FirebasePerformancePlugin self = this;
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
                 try {
