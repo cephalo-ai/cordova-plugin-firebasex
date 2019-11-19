@@ -8,15 +8,15 @@
 @synthesize traces;
 
 static NSString*const LOG_TAG = @"FirebasePerformancePlugin[native]";
-static FirebasePerformancePlugin *FirebasePerformancePlugin;
+static FirebasePerformancePlugin *firebasePerformancePlugin;
 
-+ (FirebasePerformancePlugin *) FirebasePerformancePlugin {
-    return FirebasePerformancePlugin;
++ (FirebasePerformancePlugin *) firebasePerformancePlugin {
+    return firebasePerformancePlugin;
 }
 
 - (void)pluginInitialize {
     NSLog(@"Starting Firebase plugin");
-    FirebasePerformancePlugin = self;
+    firebasePerformancePlugin = self;
 }
 
 
