@@ -1,7 +1,7 @@
 #import <Cordova/CDV.h>
 
-@interface FirebasePerformancePlugin : CDVPlugin
-+ (FirebasePerformancePlugin *)firebasePerformancePlugin;
+@interface FirebasePlugin : CDVPlugin
++ (FirebasePlugin *)firebasePlugin;
 
 - (void)startTrace:(CDVInvokedUrlCommand *)command;
 - (void)incrementCounter:(CDVInvokedUrlCommand *)command;

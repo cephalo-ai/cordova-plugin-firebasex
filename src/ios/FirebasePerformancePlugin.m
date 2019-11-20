@@ -1,22 +1,22 @@
-#import "FirebasePerformancePlugin.h"
+#import "FirebasePlugin.h"
 #import <Cordova/CDV.h>
 #import "Firebase.h"
 @import FirebasePerformance;
 
-@implementation FirebasePerformancePlugin
+@implementation FirebasePlugin
 
 @synthesize traces;
 
-static NSString*const LOG_TAG = @"FirebasePerformancePlugin[native]";
-static FirebasePerformancePlugin *firebasePerformancePlugin;
+static NSString*const LOG_TAG = @"FirebasePlugin[native]";
+static FirebasePlugin *firebasePlugin;
 
-+ (FirebasePerformancePlugin *) firebasePerformancePlugin {
-    return firebasePerformancePlugin;
++ (FirebasePlugin *) firebasePlugin {
+    return firebasePlugin;
 }
 
 - (void)pluginInitialize {
     NSLog(@"Starting Firebase plugin");
-    firebasePerformancePlugin = self;
+    firebasePlugin = self;
 }
 
 
