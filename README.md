@@ -3,7 +3,7 @@ cordova-plugin-firebasex [![Latest Stable Version](https://img.shields.io/npm/v/
 
 This plugin is a fork of [cordova-plugin-firebase](https://github.com/arnesson/cordova-plugin-firebase) which has been rework to fix issues and add new functionality.
 
-It brings push notifications, analytics, event tracking, crash reporting and more from Google Firebase to your Cordova project.
+This version only brings performance monitoring from Google Firebase to your Cordova project.
 
 Supported platforms: Android and iOS
 
